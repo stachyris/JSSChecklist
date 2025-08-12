@@ -8,10 +8,10 @@ This repo contains, data, script for analysis and output related to the short no
 ## Repo Struture
 
 - **data** : This directory has raw input for the analysis. 
-	- JSS_Sp_list.csv : Cummulative species observed in the campus between August 2017 to May 2019. 
-	- eBird-Clements-v2024-integrated-checklist-October-2024-rev.csv : Integrated eBird/Clements taxonomy to match and extract family and order information. 
-	- SOIB23.csv : State of India's Birds 2023 assessment data file (Redundant) - using [skimmr](https://github.com/rikudoukarthik/skimmr) to extract same information. 
-	- annotated_species.csv : Final, annoated species list with higher taxonomy and conservation priority status information. 
+	- ``JSS_Sp_list.csv`` : Cummulative species observed in the campus between August 2017 to May 2019. 
+	- ``eBird-Clements-v2024-integrated-checklist-October-2024-rev.csv`` : Integrated eBird/Clements taxonomy to match and extract family and order information. 
+	- ``SOIB23.csv`` : State of India's Birds 2023 assessment data file (Redundant) - using [skimmr](https://github.com/rikudoukarthik/skimmr) to extract same information. 
+	- ``annotated_species.csv`` : Final, annoated species list with higher taxonomy and conservation priority status information. 
 - **figures** : Final figures as they appears in the short note. 
 - **scripts** : R script used to import, integrate and analyse the data. 
 
@@ -24,4 +24,4 @@ To be updated
 ## Contact Information
 Please contact the following in case of interest.
 Vinay K L [vkl1@lsu.edu](mailto:vkl1@lsu.edu)  
-PhD student, Louisiana State University 
+PhD Student, Louisiana State University. 
