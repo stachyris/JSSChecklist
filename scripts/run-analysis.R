@@ -7,6 +7,7 @@ library(forcats)
 library(sysfonts)
 library(calecopal)
 library(patchwork)
+library(here)
 
 # Load your species list
 jss_sp <- read_csv("data/JSS_Sp_list.csv")
@@ -185,3 +186,5 @@ IUCN_status
 plot_2 <- IUCN_status / SoIB_status  
 plot_2
 ggsave("./figures/status.png", plot_2, dpi = 300, height = 10, width = 9)
+
+save.image(file = here(paste0("JSS_Checklist_", Sys.Date(), ".RData")))
