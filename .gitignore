@@ -47,3 +47,9 @@ po/*~
 
 # RStudio Connect folder
 rsconnect/
+
+# MacOS Shit
+.DS_Store
+
+# Some old files
+old-stuffs/
