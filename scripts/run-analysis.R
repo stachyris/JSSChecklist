@@ -48,8 +48,8 @@ annotated_species <- annotated_species %>%
     ),
     `SoIB 2023 Priority Status` = case_when(
       `Scientific Name` == "Tachyspiza badia" ~ "Low",
-      `Scientific Name` == "Ardea coromanda" ~ "Not Available",
-      `Scientific Name` == "Ficedula albicilla" ~ "Not Available",
+      `Scientific Name` == "Ardea coromanda" ~ "Low",
+      `Scientific Name` == "Ficedula albicilla" ~ "Not Assessed",
       TRUE ~ `SoIB 2023 Priority Status`
     )
   )
