@@ -8,7 +8,8 @@ This repo contains, data, script for analysis and output related to the short no
 ## Repo Struture
 
 - **data** : This directory has raw input for the analysis. 
-	- ``JSS_Sp_list.csv`` : Cummulative species observed in the campus between August 2017 to May 2019. 
+	- ``ebd_IN-KA-MY_201704_201905_unv_smp_relJun-2025`` : eBird ebd file for Mysuru between April 2017 to May 2019
+	- ``JSS_Sp_list.csv`` : Cummulative species observed in the campus between April 2017 to May 2019. 
 	- ``eBird-Clements-v2024-integrated-checklist-October-2024-rev.csv`` : Integrated eBird/Clements taxonomy to match and extract family and order information. 
 	- ``SOIB23.csv`` : State of India's Birds 2023 assessment data file (Redundant) - using [skimmr](https://github.com/rikudoukarthik/skimmr) to extract same information. 
 	- ``annotated_species.csv`` : Final, annoated species list with higher taxonomy and conservation priority status information. 
