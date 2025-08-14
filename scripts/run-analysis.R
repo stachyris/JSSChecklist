@@ -8,7 +8,8 @@ library(sysfonts)
 library(calecopal)
 library(patchwork)
 library(here)
-
+library(auk)
+library(lubridate)
 # Load your species list
 jss_sp <- read_csv("data/JSS_Sp_list.csv")
 
@@ -187,4 +188,28 @@ plot_2 <- IUCN_status / SoIB_status
 plot_2
 ggsave("./figures/status.png", plot_2, dpi = 300, height = 10, width = 9)
 
-save.image(file = here(paste0("JSS_Checklist_", Sys.Date(), ".RData")))
+
+### Let's look at the ebd dataset to try and figure out the total time, checklists etc
+mysuru_ebd <- read_ebd("data/ebd_IN-KA-MY_201704_201905_unv_smp_relJun-2025/ebd_IN-KA-MY_201704_201905_unv_smp_relJun-2025.txt")
+mysuru_ebd_filtered <- mysuru_ebd %>%
+  mutate(observation_date = ymd(observation_date)) %>%
+  filter(
+    observation_date >= as.Date("2017-04-01") &
+      observation_date <= as.Date("2019-05-31") &
+      locality_id == "L5915465"
+  )
+
+# How many lists per year?
+checklists_per_year <- mysuru_ebd_filtered %>%
+  distinct(sampling_event_identifier, .keep_all = TRUE) %>%
+  mutate(year = year(observation_date)) %>%
+  count(year, name = "n_checklists")
+
+# Total time spent?
+total_hours <- mysuru_ebd_filtered %>%
+  distinct(sampling_event_identifier, .keep_all = TRUE) %>%
+  summarise(total_hours = sum(duration_minutes, na.rm = TRUE) / 60)
+
+checklists_per_year
+total_hours
+save.image(file = here(paste0("JSS_Checklist.RData")))
